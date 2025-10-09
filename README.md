@@ -1,2 +1,1 @@
-[![MasterHead]([your image link](https://discord.com/channels/@me/900018749955002418/1425819064735105169))](your GitHub link)
-
+![Banner](https://drive.google.com/file/d/1LjsHkADk_cJMIun3DQmUPGTxWl2BYUPu/view?usp=drive_link)
