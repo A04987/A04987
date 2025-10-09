@@ -16,10 +16,8 @@
 
 <h2>Social media</h2>
 
- <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@moji_tan" data-unique-id="moji_tan" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > 
-                    <section>
-                         <a target="_blank" href="https://www.tiktok.com/@moji_tan?refer=creator_embed">@moji_tan</a>
-                     </section> 
-                </blockquote>
-                 <script async src="https://www.tiktok.com/embed.js"></script>
-            </div>
+<p align="center">
+  <a href="https://www.tiktok.com/@moji_tan" target="_blank">
+    <img src="https://img.shields.io/badge/TikTok-%40moji__tan-black?logo=tiktok&style=for-the-badge" alt="TikTok">
+  </a>
+</p>
