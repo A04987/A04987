@@ -63,5 +63,8 @@
   <img src="https://github.com/A04987/A04987/blob/main/folder-image/gubby-roblox.gif" alt="Gubby"/>
   
   <br><br>
-  <i align="center">“ bnuy ”</i>
+
+</p>
+<p align="center">
+  “ bnuy ”
 </p>
