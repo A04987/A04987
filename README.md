@@ -34,6 +34,10 @@
   <a href="https://www.tiktok.com/@moji_tan" target="_blank">
     <img src="https://img.shields.io/badge/TikTok-%40moji__tan-ff69b4?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok"/>
   </a>
+  
+   <a href="https://www.roblox.com/users/158379686/profile" target="_blank">
+    <img src="https://img.shields.io/badge/Roblox-Profile-e74c3c?style=for-the-badge&logo=roblox&logoColor=white" alt="Roblox"/>
+  </a>
 </p>
 
 ---
@@ -46,6 +50,7 @@
   </a>
 </p>
 ---
+
 
 <p align="center">
   <img src="https://media.tenor.com/3bTxZ4HdrysAAAAC/anime-girl.gif" width="200" alt="Cute anime wave gif"/>
