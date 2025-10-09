@@ -58,7 +58,7 @@
 
 
 <p align="center">
-  <img src="https://media.tenor.com/3bTxZ4HdrysAAAAC/anime-girl.gif" width="200" alt="Cute anime wave gif"/>
+  <img src="https://github.com/A04987/A04987/blob/main/folder-image/DIscord%20server.gif" alt="Gubby"/>
   <br><br>
   <i>“Stay cozy, stay creative ✨”</i>
 </p>
