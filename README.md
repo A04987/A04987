@@ -15,6 +15,11 @@
 ![A04987's Stats](https://github-readme-stats.vercel.app/api?username=A04987&theme=dracula&show_icons=true&hide_border=true&count_private=true)
 ![A04987's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=A04987&theme=dracula&show_icons=true&hide_border=true&layout=compact)
  </p>
+ 
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=A04987&theme=dracula&show_icons=true&hide_border=true&count_private=true" alt="A04987's Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=A04987&theme=dracula&show_icons=true&hide_border=true&layout=compact" alt="A04987's Top Languages" />
+</p>
 
 
 <h2>Social media</h2>
