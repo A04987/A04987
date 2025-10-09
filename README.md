@@ -1,7 +1,8 @@
 ![Banner](https://github.com/A04987/profile.github/blob/main/folder-image/IMG_2768.png)
 
-<p align="center">
+
  <h1 align="center"> 🌟 Hello, I'm A04987 🌟 </h1> 
+ <p align="center">
   <br>
   Roblox Animator | Developer | Dreamer | Sleep Master ✨
 </p>
