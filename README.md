@@ -4,12 +4,22 @@
  <h1 align="center"> 🌟 Hello, I'm A04987 🌟 </h1> 
  <p align="center">
   <br>
-  Roblox Animator | Developer | Dreamer | Sleep Master ✨
+  Roblox Animator | Artist(?) | Developer | Dreamer | Sleep Master ✨
 </p>
 
 
 <h2>About me</h2>
-<p></p>
+<p>Human being</p>
 
 ![A04987's Stats](https://github-readme-stats.vercel.app/api?username=A04987&theme=dracula&show_icons=true&hide_border=true&count_private=true)
 ![A04987's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=A04987&theme=dracula&show_icons=true&hide_border=true&layout=compact)
+
+<h2>Social media</h2>
+
+ <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@moji_tan" data-unique-id="moji_tan" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > 
+                    <section>
+                         <a target="_blank" href="https://www.tiktok.com/@moji_tan?refer=creator_embed">@moji_tan</a>
+                     </section> 
+                </blockquote>
+                 <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
