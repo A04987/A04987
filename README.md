@@ -32,6 +32,9 @@
 ### 🌸 Social Media
 
 <p align="center">
+  <img src="https://github.com/A04987/profile.github/blob/main/folder-image/DIscord%20server.gif" width="10%" alt="Banner"/>
+</p>
+<p align="center">
   <a href="https://www.tiktok.com/@moji_tan" target="_blank">
     <img src="https://img.shields.io/badge/TikTok-%40moji__tan-ff69b4?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok"/>
   </a>
