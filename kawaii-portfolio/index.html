@@ -200,11 +200,11 @@
         <p>Some of my favorite illustrations</p>
       </div>
       <div class="filter-row">
-        <button class="chip active">All</button>
-        <button class="chip">Original</button>
-        <button class="chip">Fanart</button>
-        <button class="chip">Character Design</button>
-        <button class="chip">Illustration</button>
+        <button class="chip active" data-featured-folder="all">All</button>
+        <button class="chip" data-featured-folder="roblox-character">Roblox character</button>
+        <button class="chip" data-featured-folder="anime">Anime</button>
+        <button class="chip" data-featured-folder="vtuber">Vtuber</button>
+        <button class="chip" data-featured-folder="vocaloid">Vocaloid</button>
       </div>
 
       <div class="scrapbook">
@@ -296,6 +296,23 @@
       </div>
     </section>
   </main>
+
+  <!-- Community fan art -->
+  <section class="fan-art-section reveal" id="fan-art">
+    <div class="fan-art-inner">
+      <div class="section-head fan-art-head">
+        <div>
+          <h2><span class="spark">✦</span> Community Fan Art</h2>
+          <p>Thank you for every drawing, every kind message, and every bit of support. These artworks were made by the community, and they mean a lot to me.</p>
+        </div>
+      </div>
+      <div class="fan-art-marquee" aria-label="Community fan art gallery">
+        <div class="fan-art-track" id="fanArtTrack">
+          <p class="gallery-message">Loading community fan art...</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Finale — contact + black ears peeking from the bottom -->
   <section class="finale reveal" id="contact">

@@ -136,6 +136,53 @@ document.querySelectorAll('.q-item').forEach((item) => {
   const TINTS = ['ph-lilac', 'ph-night', 'ph-peach', 'ph-mint', 'ph-pink', 'ph-sky'];
   const CATS = ['Original', 'Fanart', 'Character Design', 'Illustration'];
   const CAPS = ['lorem ipsum', 'dolor sit', 'amet elit', 'consectetur', 'adipiscing', 'sed do', 'eiusmod', 'tempor magna', 'ipsum aliqua'];
+  const DRIVE_GALLERY_PROXY_URL = 'https://script.google.com/macros/s/AKfycbznk_-isa6cPTyoLn99ve2gwxtM_2WDkOH73s1SnD_e7aOyjVQTbse6lEuBzF3Kt6g4/exec';
+  const DRIVE_FOLDERS = [
+    { key: 'roblox-character', label: 'Roblox character', folderId: '1PAfD2gnO5X8lCviyft9A9QD99lVkfqc7' },
+    { key: 'anime', label: 'Anime', folderId: '1j2QSLyntYBMx7zcL1vl0JaeIR1RUbJhP' },
+    { key: 'vtuber', label: 'Vtuber', folderId: '1AzSd-m4AxVRGE44pMt826TH6e0Mnvtez' },
+    { key: 'vocaloid', label: 'Vocaloid', folderId: '1MlJIFuHK32ljoGuOXudzilTImpPIx2d2' },
+  ];
+  const FAN_ART_FOLDER = { key: 'fan-art', label: 'Fan art', folderId: '1j_Wg-RnfLyC7gE7Je10HyxnHLDEzZYEr' };
+  const FEATURED_ARTWORKS = [
+    { id: '1GYdjdrhAH5KTFbLbvIB5RHNbkcoQMoqy', title: 'First Profile', cat: 'Original' },
+    { id: '10OvxSjORykNjGo9LzWl-aptqGqdQT-RC', title: 'Orange', cat: 'Character Design' },
+    { id: '1DdoCQ2ivwshryjCFCUNK_ze7dlNytEd7', title: 'Untitled Artwork', cat: 'Illustration' },
+    { id: '12YIRfFd1lZ_RZY4BQydcTT0G5zyjlfw4', title: 'Owen', cat: 'Character Design' },
+    { id: '18ZrsiNtUQbIgBdF2Kfc9TPXIHriLxoyG', title: 'Miga', cat: 'Character Design' },
+    { id: '1LLkmRlEcyPH0Ov1u12RSvtK_C1FrlI9O', title: 'Reuse Halloween', cat: 'Original' },
+  ];
+  const driveImage = (id, size = 1200) => `https://drive.google.com/thumbnail?id=${id}&sz=w${size}`;
+  const normalizeDriveFile = (file, folder) => ({
+    id: file.id,
+    title: file.title || file.name || 'Artwork',
+    cat: folder.label,
+  });
+  const randomize = (items) => [...items].sort(() => Math.random() - 0.5);
+  const comingSoonFigure = (label, i = 0, extraClass = '') => `
+      <figure class="polaroid coming-soon ${extraClass}" tabindex="0" data-cat="${label}" data-title="${label}">
+        <div class="photo ${TINTS[i % TINTS.length]} tall">
+          ${DOODLES[i % DOODLES.length]}
+          <span class="ph-label">Coming soon</span>
+        </div>
+        <figcaption>${label}</figcaption>
+      </figure>`;
+  const artFigure = (art, i, extraClass = '') => `
+      <figure class="polaroid ${extraClass}" tabindex="0" data-cat="${art.cat}" data-image="${driveImage(art.id, 1600)}" data-title="${art.title}">
+        <div class="photo ${TINTS[i % TINTS.length]}${i % 3 === 0 ? ' tall' : ''}">
+          <img src="${driveImage(art.id)}" alt="${art.title}" loading="lazy" />
+          <span class="ph-label">${art.title}</span>
+        </div>
+        <figcaption>${art.cat}</figcaption>
+      </figure>`;
+  const fanArtFigure = (art, i) => `
+      <figure class="polaroid fan-art-card" tabindex="0" data-cat="${art.cat}" data-image="${driveImage(art.id, 1600)}" data-title="${art.title}">
+        <div class="photo ${TINTS[i % TINTS.length]}">
+          <img src="${driveImage(art.id)}" alt="${art.title}" loading="lazy" />
+          <span class="ph-label">${art.title}</span>
+        </div>
+        <figcaption>Community love</figcaption>
+      </figure>`;
 
   // ---- Modal helpers ----
   function openModal(dlg) { if (dlg && !dlg.open) dlg.showModal(); }
@@ -159,14 +206,17 @@ document.querySelectorAll('.q-item').forEach((item) => {
     const photo = fig.querySelector('.photo');
     const tint = [...photo.classList].find((c) => c.startsWith('ph-')) || 'ph-lilac';
     const doodle = photo.querySelector('.doodle');
+    const image = fig.dataset.image || photo.querySelector('img')?.src;
     lbStage.className = 'lb-stage ' + tint;
-    lbStage.innerHTML = doodle ? doodle.outerHTML : '';
-    lbTitle.textContent = photo.querySelector('.ph-label')?.textContent || 'Artwork';
+    lbStage.innerHTML = image
+      ? `<img src="${image}" alt="${fig.dataset.title || 'Artwork'}" />`
+      : (doodle ? doodle.outerHTML : '');
+    lbTitle.textContent = fig.dataset.title || photo.querySelector('.ph-label')?.textContent || 'Artwork';
     lbCap.textContent = fig.querySelector('figcaption')?.textContent || '';
     lbCat.textContent = fig.dataset.cat || CATS[lbIndex % CATS.length];
   }
   function openLightbox(fig) {
-    lbList = Array.from(fig.closest('.scrapbook, .sheet-grid').querySelectorAll('.polaroid'));
+    lbList = Array.from(fig.closest('.scrapbook, .sheet-grid, .fan-art-track').querySelectorAll('.polaroid'));
     lbIndex = lbList.indexOf(fig);
     renderLightbox();
     openModal(lightbox);
@@ -228,17 +278,168 @@ document.querySelectorAll('.q-item').forEach((item) => {
   });
 
   // ---- Build the "view all" sheets ----
-  const galleryGrid = document.getElementById('galleryGrid');
-  if (galleryGrid) {
-    galleryGrid.innerHTML = Array.from({ length: 9 }, (_, i) => `
-      <figure class="polaroid" tabindex="0" data-cat="${CATS[i % CATS.length]}">
-        <div class="photo ${TINTS[i % TINTS.length]}">
-          ${DOODLES[i % DOODLES.length]}
-          <span class="ph-label">Artwork ${i + 1}</span>
-        </div>
-        <figcaption>${CAPS[i % CAPS.length]}</figcaption>
-      </figure>`).join('');
+  const scrapbook = document.querySelector('.scrapbook');
+  const featuredFilter = document.querySelector('#gallery .filter-row');
+  const allFolder = { key: 'all', label: 'All' };
+  const featuredFolder = allFolder;
+
+  function renderFeaturedGallery(artworks, folder = allFolder) {
+    if (!scrapbook) return;
+    const visibleArtworks = randomize(artworks).slice(0, 6);
+
+    scrapbook.innerHTML = visibleArtworks.length
+      ? visibleArtworks.map((art, i) => artFigure(art, i, `p${i + 1}`)).join('')
+      : comingSoonFigure(folder.label, 0, 'p1');
   }
+
+  async function fetchDriveFolder(folder) {
+    if (!DRIVE_GALLERY_PROXY_URL) return null;
+
+    const url = new URL(DRIVE_GALLERY_PROXY_URL);
+    url.searchParams.set('folderId', folder.folderId);
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Drive gallery request failed: ${res.status}`);
+    const data = await res.json();
+
+    return (Array.isArray(data) ? data : data.files || [])
+      .filter((file) => file.id && (!file.mimeType || file.mimeType.startsWith('image/')))
+      .map((file) => normalizeDriveFile(file, folder));
+  }
+
+  async function fetchAllDriveFolders() {
+    const groups = await Promise.all(
+      DRIVE_FOLDERS.map((folder) => fetchDriveFolder(folder).catch(() => []))
+    );
+
+    return groups.flat();
+  }
+
+  async function loadFeaturedFolder(folder) {
+    if (folder.key === 'all') {
+      renderFeaturedGallery(FEATURED_ARTWORKS, folder);
+      try {
+        const files = await fetchAllDriveFolders();
+        if (files.length) renderFeaturedGallery(files, folder);
+      } catch (err) {
+        console.warn('Featured Drive gallery fallback:', err);
+      }
+      return;
+    }
+
+    renderFeaturedGallery([], folder);
+    try {
+      const files = await fetchDriveFolder(folder);
+      renderFeaturedGallery(files || [], folder);
+    } catch (err) {
+      console.warn('Featured Drive gallery fallback:', err);
+      renderFeaturedGallery([], folder);
+    }
+  }
+
+  loadFeaturedFolder(featuredFolder);
+
+  featuredFilter?.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-featured-folder]');
+    if (!btn) return;
+
+    featuredFilter.querySelectorAll('.chip').forEach((chip) => chip.classList.remove('active'));
+    btn.classList.add('active');
+
+    const folder = btn.dataset.featuredFolder === 'all'
+      ? allFolder
+      : DRIVE_FOLDERS.find((item) => item.key === btn.dataset.featuredFolder);
+
+    if (folder) loadFeaturedFolder(folder);
+  });
+
+  const galleryGrid = document.getElementById('galleryGrid');
+  const sheetFilter = document.querySelector('#sheetGallery .sheet-filter');
+  let activeDriveFolder = featuredFolder;
+
+  function renderGalleryMessage(message) {
+    if (!galleryGrid) return;
+    galleryGrid.innerHTML = `<p class="gallery-message">${message}</p>`;
+  }
+
+  async function loadDriveFolder(folder) {
+    if (!galleryGrid) return;
+    activeDriveFolder = folder;
+    renderGalleryMessage(`Loading ${folder.label}...`);
+
+    if (folder.key === 'all') {
+      try {
+        const files = DRIVE_GALLERY_PROXY_URL ? await fetchAllDriveFolders() : FEATURED_ARTWORKS;
+        galleryGrid.innerHTML = files.length
+          ? files.map((art, i) => artFigure(art, i)).join('')
+          : `<p class="gallery-message">No images found yet.</p>`;
+      } catch (err) {
+        console.error(err);
+        renderGalleryMessage('Could not load Google Drive folders. Check sharing and the Apps Script URL.');
+      }
+      return;
+    }
+
+    if (!DRIVE_GALLERY_PROXY_URL) {
+      if (folder.key === 'roblox-character') {
+        galleryGrid.innerHTML = FEATURED_ARTWORKS
+          .map((art, i) => artFigure({ ...art, cat: folder.label }, i))
+          .join('');
+      } else {
+        galleryGrid.innerHTML = comingSoonFigure(folder.label);
+      }
+      return;
+    }
+
+    try {
+      const files = await fetchDriveFolder(folder);
+
+      galleryGrid.innerHTML = files.length
+        ? files.map((art, i) => artFigure(art, i)).join('')
+        : comingSoonFigure(folder.label);
+    } catch (err) {
+      console.error(err);
+      renderGalleryMessage('Could not load this Google Drive folder. Check sharing and the Apps Script URL.');
+    }
+  }
+
+  if (sheetFilter) {
+    sheetFilter.innerHTML = [allFolder, ...DRIVE_FOLDERS]
+      .map((folder, i) => `<button class="chip ${i === 0 ? 'active' : ''}" data-folder-key="${folder.key}">${folder.label}</button>`)
+      .join('');
+    sheetFilter.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-folder-key]');
+      if (!btn) return;
+      sheetFilter.querySelectorAll('.chip').forEach((chip) => chip.classList.remove('active'));
+      btn.classList.add('active');
+      const folder = btn.dataset.folderKey === 'all'
+        ? allFolder
+        : DRIVE_FOLDERS.find((item) => item.key === btn.dataset.folderKey);
+      if (folder) loadDriveFolder(folder);
+    });
+  }
+
+  const fanArtTrack = document.getElementById('fanArtTrack');
+  async function loadFanArtSection() {
+    if (!fanArtTrack) return;
+
+    try {
+      const files = await fetchDriveFolder(FAN_ART_FOLDER);
+
+      if (!files?.length) {
+        fanArtTrack.innerHTML = comingSoonFigure('Community fan art');
+        return;
+      }
+
+      const cards = files.map((art, i) => fanArtFigure(art, i)).join('');
+      fanArtTrack.innerHTML = cards + cards;
+    } catch (err) {
+      console.warn('Fan art section fallback:', err);
+      fanArtTrack.innerHTML = comingSoonFigure('Community fan art');
+    }
+  }
+
+  loadFanArtSection();
+
   const animGrid = document.getElementById('animGrid');
   const ANIMS = [
     { t: 'Lorem Ipsum', d: 'Dolor sit amet, consectetur.', dur: '00:15', l: '♥ 4.2K' },
@@ -255,7 +456,10 @@ document.querySelectorAll('.q-item').forEach((item) => {
         <h4>${a.t}</h4><p>${a.d}</p><span class="likes">${a.l}</span>
       </button>`).join('');
   }
-  document.getElementById('viewAllArt')?.addEventListener('click', () => openModal(document.getElementById('sheetGallery')));
+  document.getElementById('viewAllArt')?.addEventListener('click', () => {
+    openModal(document.getElementById('sheetGallery'));
+    loadDriveFolder(activeDriveFolder);
+  });
   document.getElementById('viewAllAnim')?.addEventListener('click', () => openModal(document.getElementById('sheetAnim')));
 
   // ---- Delegated clicks (works for dynamic sheet cards too) ----
