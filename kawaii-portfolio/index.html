@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moji ♡ Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Gochi+Hand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=12" />
+</head>
+<body>
+  <!-- Bunny OS boot / loading screen -->
+  <div id="boot" class="boot-screen">
+    <div class="boot-window">
+      <div class="boot-titlebar">
+        <span class="tb-dots"><i></i><i></i><i></i></span>
+        <span class="tb-title">Bunny OS</span>
+        <span class="tb-ver">v2.6</span>
+      </div>
+      <div class="boot-body">
+        <div class="pixel-bunny">
+          <svg viewBox="0 0 14 15" width="132" height="142" shape-rendering="crispEdges" aria-hidden="true">
+            <!-- ears (white) -->
+            <rect x="3" y="1" width="2" height="6" class="px-w"/>
+            <rect x="9" y="1" width="2" height="6" class="px-w"/>
+            <!-- inner ears (pink) -->
+            <rect x="4" y="2" width="1" height="3" class="px-p"/>
+            <rect x="9" y="2" width="1" height="3" class="px-p"/>
+            <!-- head / body (white) -->
+            <rect x="2" y="6" width="10" height="8" class="px-w"/>
+            <rect x="1" y="8" width="1" height="4" class="px-w"/>
+            <rect x="12" y="8" width="1" height="4" class="px-w"/>
+            <!-- eyes (ink) -->
+            <rect x="4" y="9" width="1" height="2" class="px-i"/>
+            <rect x="9" y="9" width="1" height="2" class="px-i"/>
+            <!-- cheeks (pink) -->
+            <rect x="3" y="10" width="1" height="1" class="px-p"/>
+            <rect x="10" y="10" width="1" height="1" class="px-p"/>
+            <!-- nose (pink) -->
+            <rect x="6" y="10" width="2" height="1" class="px-p"/>
+            <!-- feet (pink pads) -->
+            <rect x="2" y="14" width="3" height="1" class="px-p"/>
+            <rect x="9" y="14" width="3" height="1" class="px-p"/>
+          </svg>
+        </div>
+        <p class="boot-text">booting cuteness<span class="boot-dots"><i>.</i><i>.</i><i>.</i></span></p>
+        <div class="boot-bar"><span></span></div>
+        <p class="boot-hint">♥ loading Moji Studio ♥</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Soft blob background -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <!-- Floating decorations -->
+  <div class="bg-decor" aria-hidden="true">
+    <span class="floaty heart">♥</span>
+    <span class="floaty star">✦</span>
+    <span class="floaty heart small">♥</span>
+    <span class="floaty star small">✧</span>
+    <span class="floaty heart big">♥</span>
+    <span class="floaty star">✦</span>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-bunny" aria-hidden="true">
+          <i class="ear left"></i><i class="ear right"></i>
+          <i class="face"><i class="cheek l"></i><i class="cheek r"></i></i>
+        </span>
+        Moji
+      </a>
+      <nav class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#animations">Animations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Twitter" data-toast="🐰 @moji on X — coming soon ♥">𝕏</button>
+        <button class="icon-btn" aria-label="Instagram" data-toast="🐰 @moji.studio — coming soon ♥">◎</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Poster hero -->
+    <section class="poster reveal" id="home">
+      <span class="heart-puck hp1" aria-hidden="true">♥</span>
+      <div class="social-pill poster-socials">
+        <span>◎</span><span>♥</span><span>𝕏</span>
+      </div>
+      <div class="poster-card">
+
+        <label class="search-pill">
+          <input type="text" placeholder="WHO IS MOJI?" aria-label="Search" id="searchInput" />
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15 15 L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </label>
+
+          <div class="poster-left">
+            <div class="head-row">
+              <div class="head-left">
+                <div class="tile-row" id="tileRow">
+                  <span class="tile solid"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20 C5 15 2 10 5 6.5 C7 4 11 5 12 8 C13 5 17 4 19 6.5 C22 10 19 15 12 20 Z" fill="currentColor"/></svg></span>
+                  <span class="tile"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5 h16 v11 h-9 l-4 4 v-4 h-3 z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+                  <span class="tile"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M7 4 h10 v16 l-5 -4 -5 4 z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+                </div>
+                <h1 class="mega">Moji<span class="mega-sub">Studio</span></h1>
+              </div>
+              <div class="speech-bubble">
+                <p>Lorem ipsum,<br />dolor sit amet,<br />caro membro!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone-wrap">
+              <div class="phone-frame">
+                <img src="asset/moji-poster-design.png" alt="Moji — avatar illustration" />
+                <span class="focus-box" aria-hidden="true"><i class="burst">✦</i></span>
+                <span class="frame-title">Moji<br />Studio</span>
+              </div>
+              <div class="icon-rail" id="iconRail">
+                <span class="rail-btn"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="8.5" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4.5 20 C6 15.5 9 14 12 14 C15 14 18 15.5 19.5 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                <span class="rail-btn"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3.5" y="7" width="17" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7 L10.5 4.5 h3 L15 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+                <span class="rail-btn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 10 a6 6 0 0 1 12 0 c0 4 1.5 5.5 2.5 6.5 h-17 c1 -1 2.5 -2.5 2.5 -6.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 19.5 a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+                <span class="rail-btn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M7 4 h10 v16 l-5 -4 -5 4 z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+              </div>
+          </div>
+
+        <!-- expression strip -->
+        <div class="expressions">
+          <button class="car-arrow" id="exprPrev" aria-label="Previous emote">‹</button>
+          <div class="expr-tiles" id="exprTiles">
+            <div class="expr tint-a">
+              <svg viewBox="0 0 48 44" width="66" height="60" aria-hidden="true">
+                <ellipse cx="17" cy="8" rx="3" ry="8" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <ellipse cx="31" cy="8" rx="3" ry="8" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <circle cx="24" cy="26" r="13" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <path d="M16 25 q3 -3 6 0 M26 25 q3 -3 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <ellipse cx="24" cy="32" rx="3" ry="3.6" fill="currentColor"/>
+              </svg>
+              <small>emote 01</small>
+            </div>
+            <div class="expr tint-b">
+              <svg viewBox="0 0 48 44" width="66" height="60" aria-hidden="true">
+                <ellipse cx="17" cy="8" rx="3" ry="8" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <ellipse cx="31" cy="8" rx="3" ry="8" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <circle cx="24" cy="26" r="13" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <path d="M16 24 q3 -3 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="30" cy="24" r="1.9" fill="currentColor"/>
+                <path d="M21 31 q3 3 6 0 q-1.5 3 -3 3 q-1.5 0 -3 -3 Z" fill="currentColor"/>
+              </svg>
+              <small>emote 02</small>
+            </div>
+            <div class="expr tint-c">
+              <svg viewBox="0 0 48 44" width="66" height="60" aria-hidden="true">
+                <ellipse cx="17" cy="8" rx="3" ry="8" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <ellipse cx="31" cy="8" rx="3" ry="8" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <circle cx="24" cy="26" r="13" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <circle cx="18" cy="24" r="1.9" fill="currentColor"/>
+                <circle cx="30" cy="24" r="1.9" fill="currentColor"/>
+                <path d="M21 32 q3 -3 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M12 29 l3 1 M36 29 l-3 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <small>emote 03</small>
+            </div>
+          </div>
+          <button class="car-arrow" id="exprNext" aria-label="Next emote">›</button>
+        </div>
+
+        <blockquote class="poster-quote">
+          “Lorem ipsum dolor sit amet, consectetur adipiscing elit — sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua?”
+        </blockquote>
+
+        <div class="action-bar" id="actionBar">
+          <span class="ab-btn"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 20 C5 15 2 10 5 6.5 C7 4 11 5 12 8 C13 5 17 4 19 6.5 C22 10 19 15 12 20 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <span class="ab-btn"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 21 V4 M6 4 h11 l-2.5 4 2.5 4 H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+          <span class="ab-btn"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4 h10 v16 l-5 -4 -5 4 z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <span class="ab-btn"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6 h16 v10 h-9 l-4 4 v-4 h-3 z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true"></div>
+
+    <!-- Gallery — scrapbook scatter -->
+    <section class="section reveal" id="gallery">
+      <div class="section-head">
+        <h2><span class="spark">✦</span> Art Gallery</h2>
+        <p>Some of my favorite illustrations</p>
+      </div>
+      <div class="filter-row">
+        <button class="chip active">All</button>
+        <button class="chip">Original</button>
+        <button class="chip">Fanart</button>
+        <button class="chip">Character Design</button>
+        <button class="chip">Illustration</button>
+      </div>
+
+      <div class="scrapbook">
+        <figure class="polaroid p1">
+          <div class="photo ph-lilac tall">
+            <svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40 C10 30 4 20 10 12 C14 6 22 8 24 14 C26 8 34 6 38 12 C44 20 38 30 24 40 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+            <span class="ph-label">Artwork 1</span>
+          </div>
+          <figcaption>lorem ipsum</figcaption>
+        </figure>
+        <figure class="polaroid p2">
+          <div class="photo ph-night">
+            <svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 6 C20 8 14 17 16 27 C18 37 28 43 38 40 C30 40 22 33 21 24 C20 15 24 9 30 6 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+            <span class="ph-label">Artwork 2</span>
+          </div>
+          <figcaption>dolor sit amet</figcaption>
+        </figure>
+        <figure class="polaroid p3">
+          <div class="photo ph-peach tall">
+            <svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 L28.5 17 L42 18 L31.5 26.5 L35.5 40 L24 31.5 L12.5 40 L16.5 26.5 L6 18 L19.5 17 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+            <span class="ph-label">Artwork 3</span>
+          </div>
+          <figcaption>consectetur</figcaption>
+        </figure>
+        <figure class="polaroid p4">
+          <div class="photo ph-mint">
+            <svg class="doodle" viewBox="0 0 60 54" aria-hidden="true"><ellipse cx="22" cy="14" rx="6" ry="15" transform="rotate(-12 22 14)" fill="none" stroke="currentColor" stroke-width="2.4"/><ellipse cx="38" cy="14" rx="6" ry="15" transform="rotate(12 38 14)" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="30" cy="36" r="16" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+            <span class="ph-label">Artwork 4</span>
+          </div>
+          <figcaption>adipiscing elit</figcaption>
+        </figure>
+        <figure class="polaroid p5">
+          <div class="photo ph-pink">
+            <svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 19 C24 10 30 8 30 8 C34 12 30 19 24 19 Z M29 24 C38 24 40 30 40 30 C36 34 29 30 29 24 Z M24 29 C24 38 18 40 18 40 C14 36 18 29 24 29 Z M19 24 C10 24 8 18 8 18 C12 14 19 18 19 24 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+            <span class="ph-label">Artwork 5</span>
+          </div>
+          <figcaption>sed do eiusmod</figcaption>
+        </figure>
+        <figure class="polaroid p6">
+          <div class="photo ph-sky tall">
+            <svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34 C8 34 5 29 8 25 C6 19 12 15 17 17 C19 11 28 10 31 16 C38 15 42 22 38 27 C41 31 37 34 33 34 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+            <span class="ph-label">Artwork 6</span>
+          </div>
+          <figcaption>tempor magna</figcaption>
+        </figure>
+      </div>
+
+      <div class="center">
+        <button type="button" class="btn-ghost" id="viewAllArt">View all artworks →</button>
+      </div>
+    </section>
+
+    <!-- Animations — featured player + queue -->
+    <section class="section reveal" id="animations">
+      <div class="section-head">
+        <h2><span class="spark">✦</span> Animations</h2>
+        <p>Some of my animation works</p>
+      </div>
+      <div class="theater">
+        <div class="featured" id="featured">
+          <div class="placeholder screen">
+            <span class="play-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5 L19 12 L8 19 Z" fill="currentColor"/></svg>
+            </span>
+            <i class="dur" id="featDur">00:15</i>
+          </div>
+          <div class="feat-meta">
+            <h3 id="featTitle">Lorem Ipsum</h3>
+            <p id="featDesc">Dolor sit amet, consectetur adipiscing.</p>
+            <span class="likes" id="featLikes">♥ 4.2K</span>
+          </div>
+        </div>
+        <div class="queue" id="queue">
+          <p class="queue-label">up next</p>
+          <button class="q-item" data-title="Dolor Sit Amet" data-desc="Consectetur adipiscing elit sed do." data-dur="00:20" data-likes="♥ 8.1K">
+            <span class="q-thumb"><svg viewBox="0 0 24 24" width="13" height="13"><path d="M8 5 L19 12 L8 19 Z" fill="currentColor"/></svg></span>
+            <span class="q-info"><strong>Dolor Sit Amet</strong><em>00:20 · ♥ 8.1K</em></span>
+          </button>
+          <button class="q-item" data-title="Consectetur Elit" data-desc="Eiusmod tempor incididunt ut labore." data-dur="00:16" data-likes="♥ 6.7K">
+            <span class="q-thumb"><svg viewBox="0 0 24 24" width="13" height="13"><path d="M8 5 L19 12 L8 19 Z" fill="currentColor"/></svg></span>
+            <span class="q-info"><strong>Consectetur Elit</strong><em>00:16 · ♥ 6.7K</em></span>
+          </button>
+          <button class="q-item" data-title="Tempor Incididunt" data-desc="Ut enim ad minim veniam quis." data-dur="00:16" data-likes="♥ 5.3K">
+            <span class="q-thumb"><svg viewBox="0 0 24 24" width="13" height="13"><path d="M8 5 L19 12 L8 19 Z" fill="currentColor"/></svg></span>
+            <span class="q-info"><strong>Tempor Incididunt</strong><em>00:16 · ♥ 5.3K</em></span>
+          </button>
+          <button type="button" class="btn-ghost sm" id="viewAllAnim">View all animations →</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Finale — contact + black ears peeking from the bottom -->
+  <section class="finale reveal" id="contact">
+    <div class="finale-inner">
+      <div class="finale-content">
+        <h2><span class="spark">✦</span> Get in Touch</h2>
+        <p class="contact-sub">Lorem ipsum dolor sit amet, consectetur!</p>
+        <a class="contact-line link" href="mailto:hello@moji.art"><span class="c-icon">✉</span> hello@moji.art</a>
+        <a class="contact-line link" href="#"><span class="c-icon">❀</span> commissions open</a>
+        <div class="social-pill row">
+          <span>𝕏</span><span>◎</span><span>♪</span>
+        </div>
+      </div>
+      <div class="finale-visual" aria-hidden="true">
+        <img class="ears-img" src="asset/noFilter.png" alt="" />
+      </div>
+    </div>
+    <div class="finale-footer">
+      <p>© 2026 Moji. All rights reserved.</p>
+      <p>Made with <span class="foot-heart">♥</span> and lots of purple.</p>
+    </div>
+  </section>
+
+  <!-- Artwork lightbox -->
+  <dialog id="lightbox" class="modal lb" aria-label="Artwork viewer">
+    <button class="modal-close" data-close aria-label="Close">✕</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous artwork">‹</button>
+    <div class="lb-inner">
+      <div class="lb-stage" id="lbStage"></div>
+      <div class="lb-meta">
+        <span class="lb-cat" id="lbCat">Illustration</span>
+        <h3 id="lbTitle">Artwork</h3>
+        <p id="lbCap">lorem ipsum</p>
+        <p class="lb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <div class="lb-actions">
+          <button class="pill-btn" data-toast="♥ Added to favorites!" data-toggle>♥ Like</button>
+          <button class="pill-btn" data-toast="🔖 Saved to your board!">🔖 Save</button>
+          <button class="pill-btn" data-toast="🔗 Link copied!">🔗 Share</button>
+        </div>
+      </div>
+    </div>
+    <button class="lb-nav next" id="lbNext" aria-label="Next artwork">›</button>
+  </dialog>
+
+  <!-- Video player -->
+  <dialog id="videoModal" class="modal vid" aria-label="Animation player">
+    <button class="modal-close" data-close aria-label="Close">✕</button>
+    <div class="vid-inner">
+      <div class="vid-stage" id="vidStage">
+        <button class="vid-play" id="vidPlay" aria-label="Play"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5 L19 12 L8 19 Z" fill="currentColor"/></svg></button>
+        <div class="vid-progress"><span id="vidBar"></span></div>
+        <i class="dur" id="vidDur">00:15</i>
+      </div>
+      <div class="vid-meta">
+        <h3 id="vidTitle">Lorem Ipsum</h3>
+        <p id="vidDesc">Dolor sit amet, consectetur adipiscing.</p>
+        <div class="vid-foot">
+          <span class="likes" id="vidLikes">♥ 4.2K</span>
+          <button class="pill-btn" data-toast="♥ Liked this animation!" data-toggle>♥ Like</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- View all: artworks sheet -->
+  <dialog id="sheetGallery" class="modal sheet" aria-label="All artworks">
+    <div class="sheet-head">
+      <h3><span class="spark">✦</span> All Artworks</h3>
+      <button class="modal-close" data-close aria-label="Close">✕</button>
+    </div>
+    <div class="filter-row sheet-filter">
+      <button class="chip active">All</button>
+      <button class="chip">Original</button>
+      <button class="chip">Fanart</button>
+      <button class="chip">Character Design</button>
+      <button class="chip">Illustration</button>
+    </div>
+    <div class="sheet-grid" id="galleryGrid"></div>
+  </dialog>
+
+  <!-- View all: animations sheet -->
+  <dialog id="sheetAnim" class="modal sheet" aria-label="All animations">
+    <div class="sheet-head">
+      <h3><span class="spark">✦</span> All Animations</h3>
+      <button class="modal-close" data-close aria-label="Close">✕</button>
+    </div>
+    <div class="sheet-grid anim" id="animGrid"></div>
+  </dialog>
+
+  <!-- Toast -->
+  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+  <script src="script.js?v=13"></script>
+</body>
+</html>
