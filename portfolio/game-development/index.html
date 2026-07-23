@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="layout-v2.css?v=7" />
   <link rel="stylesheet" href="../transition-bridge.css?v=6" />
 </head>
 <body>
@@ -23,214 +24,248 @@
       <p>ROBLOX STUDIO PORTFOLIO</p>
       <strong>INITIALIZING</strong>
       <div class="loader-progress"><span></span></div>
-      <small><span id="loadPercent">00</span>% / BUILD 01</small>
+      <small><span id="loadPercent">00</span>% / BUILD 02</small>
     </div>
   </div>
 
   <div class="noise" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="dev-glitch-overlay" id="devGlitchOverlay" aria-hidden="true">
+    <span class="glitch-slice slice-one"></span>
+    <span class="glitch-slice slice-two"></span>
+    <span class="glitch-slice slice-three"></span>
+  </div>
+  <div class="dev-bg" aria-hidden="true">
+    <span class="dev-blob blob-one"></span>
+    <span class="dev-blob blob-two"></span>
+    <span class="dev-grid"></span>
+  </div>
 
-  <header class="site-header">
-    <a class="dev-mark" href="#top" aria-label="Game development home">
-      <span class="mark-block">M</span>
-      <span>MOJI<br /><b>DEV</b></span>
-    </a>
-
-    <nav class="dev-nav" aria-label="Game development navigation">
-      <a href="#projects">Games</a>
-      <a href="#ugc">UGC</a>
-      <a href="#capabilities">Design</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="back-link" href="../" data-bridge="to-portfolio">
-      <span>Back to portfolio</span>
-      <b aria-hidden="true">↗</b>
-    </a>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-orbit" aria-hidden="true">
-        <span class="hero-ring ring-a"></span>
-        <span class="hero-ring ring-b"></span>
-        <span class="hero-ring ring-c"></span>
-        <span class="crosshair">+</span>
-      </div>
-
-      <div class="hero-meta reveal">
-        <span>PORTFOLIO / 2026</span>
-        <span class="status"><i></i> AVAILABLE FOR PROJECTS</span>
-      </div>
-
-      <div class="hero-title" aria-label="Game Development">
-        <p class="eyebrow reveal">ROBLOX STUDIO / INTERACTIVE WORLDS</p>
-        <h1>
-          <span class="title-line reveal">GAME</span>
-          <span class="title-line outline reveal">DEVELOPMENT</span>
-        </h1>
-        <div class="title-accent reveal">
-          <span></span>
-          <p>DESIGNING SYSTEMS.<br />BUILDING EXPERIENCES.</p>
-        </div>
-      </div>
-
-      <div class="hero-index reveal" aria-hidden="true">
-        <span>01</span>
-        <i></i>
-        <small>05</small>
-      </div>
-
-      <a class="scroll-cue" href="#projects">
-        <span>Explore selected work</span>
-        <i aria-hidden="true">↓</i>
+  <header class="dev-navbar">
+    <div class="dev-nav-inner">
+      <a class="dev-logo" href="../#home" data-bridge="to-portfolio">
+        <span class="dev-logo-bunny" aria-hidden="true">
+          <i class="ear left"></i><i class="ear right"></i>
+          <i class="face"><i class="cheek left"></i><i class="cheek right"></i></i>
+        </span>
+        Moji
       </a>
-    </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div>
-        <span>GAME SYSTEMS</span><i>✦</i>
-        <span>WORLD DESIGN</span><i>✦</i>
-        <span>UGC</span><i>✦</i>
-        <span>ROBLOX STUDIO</span><i>✦</i>
-        <span>GAME SYSTEMS</span><i>✦</i>
-        <span>WORLD DESIGN</span><i>✦</i>
-        <span>UGC</span><i>✦</i>
-        <span>ROBLOX STUDIO</span><i>✦</i>
+      <nav class="dev-links" aria-label="Portfolio navigation">
+        <a href="../#home" data-bridge="to-portfolio">Home</a>
+        <a href="../#gallery" data-bridge="to-portfolio">Gallery</a>
+        <a href="../#animations" data-bridge="to-portfolio">Animations</a>
+        <a class="active" href="#home">Game Development</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="dev-nav-actions">
+        <a class="dev-icon-btn" href="https://www.tiktok.com/@moji_tan" target="_blank" rel="noreferrer" aria-label="Moji on TikTok">♪</a>
+        <a class="dev-icon-btn" href="https://www.roblox.com/users/158379686/profile" target="_blank" rel="noreferrer" aria-label="Moji on Roblox">R</a>
+        <a class="dev-icon-btn back" href="../" data-bridge="to-portfolio" aria-label="Back to portfolio">↶</a>
       </div>
     </div>
+  </header>
 
-    <section class="section projects" id="projects">
-      <header class="section-header reveal">
-        <div>
-          <p class="section-no">02 / SELECTED BUILDS</p>
-          <h2>Games in<br /><em>development.</em></h2>
+  <main>
+    <section class="dev-poster reveal" id="home">
+      <span class="poster-index" aria-hidden="true">BUILD / 02</span>
+      <div class="dev-poster-card">
+        <div class="poster-toolbar">
+          <span class="tool-label"><i></i> ROBLOX STUDIO PORTFOLIO</span>
+          <span class="tool-status">CURRENTLY BUILDING <b>●</b></span>
         </div>
-        <p class="section-intro">Experiments, playable worlds, and systems currently taking shape inside Roblox Studio.</p>
-      </header>
 
-      <div class="project-list">
-        <article class="project-card reveal">
-          <div class="project-visual visual-one">
-            <span class="visual-grid"></span>
-            <span class="portal portal-back"></span>
-            <span class="portal portal-front"></span>
-            <p>PROTOTYPE<br />IN MOTION</p>
+        <div class="poster-copy">
+          <p class="poster-kicker glitch-copy" data-glitch-text="DESIGN / SYSTEMS / WORLDS">DESIGN / SYSTEMS / WORLDS</p>
+          <h1>Game<span>Development</span></h1>
+          <p class="poster-lede">I build playable worlds, expressive systems, and digital items inside Roblox Studio.</p>
+          <a class="poster-cta" href="#projects">View selected builds <b>↓</b></a>
+        </div>
+
+        <div class="studio-window" aria-label="Roblox Studio visual">
+          <div class="studio-titlebar">
+            <span><i></i><i></i><i></i></span>
+            <b>MOJI_STUDIO.RBXL</b>
+            <small>PLAYTEST</small>
+          </div>
+          <div class="studio-stage">
+            <span class="stage-grid"></span>
+            <span class="stage-orbit orbit-outer"></span>
+            <span class="stage-orbit orbit-inner"></span>
+            <span class="stage-core" role="img" aria-label="Roblox"><i></i></span>
+            <span class="stage-coordinate">X 049 / Y 087</span>
+          </div>
+          <div class="studio-controls">
+            <span>SCENE 01</span>
+            <div><i></i><i></i><i></i><i></i></div>
+            <span>60 FPS</span>
+          </div>
+        </div>
+
+        <div class="poster-stats">
+          <div><strong>02</strong><span>Active<br />projects</span></div>
+          <div><strong>04</strong><span>Creative<br />disciplines</span></div>
+          <div><strong>∞</strong><span>Ideas in<br />progress</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="dev-divider" aria-hidden="true"><span></span></div>
+
+    <section class="dev-section reveal" id="projects">
+      <div class="dev-section-head">
+        <p class="section-code">02 / GAME GALLERY</p>
+        <h2>Selected <span>builds</span></h2>
+        <p>Projects, prototypes, and systems currently taking shape.</p>
+      </div>
+
+      <div class="dev-filter" role="group" aria-label="Filter game projects">
+        <button class="active" data-project-filter="all">All</button>
+        <button data-project-filter="development">In development</button>
+        <button data-project-filter="prototype">Prototype</button>
+        <button data-project-filter="released">Released</button>
+      </div>
+
+      <div class="game-scrapbook">
+        <article class="game-polaroid card-a" data-project-category="development" tabindex="0">
+          <div class="game-art art-dreamscape">
+            <span class="art-grid"></span>
+            <span class="door door-back"></span>
+            <span class="door door-front"></span>
             <small>LIVE BUILD / 01</small>
           </div>
-          <div class="project-copy">
-            <div class="project-topline">
-              <span>01</span>
-              <span class="project-status">IN DEVELOPMENT</span>
-            </div>
-            <h3>Project<br />Dreamscape</h3>
-            <p>A stylized multiplayer experience focused on exploration, expressive environments, and replayable social moments.</p>
-            <ul class="tags" aria-label="Project disciplines">
-              <li>Game Design</li>
-              <li>World Building</li>
-              <li>Systems</li>
-            </ul>
+          <div class="game-caption">
+            <span>01</span><div><h3>Project Dreamscape</h3><p>Exploration / Social / World Design</p></div>
           </div>
         </article>
 
-        <article class="project-card reverse reveal">
-          <div class="project-visual visual-two">
-            <span class="slash slash-a"></span>
-            <span class="slash slash-b"></span>
-            <span class="target-ring"></span>
-            <p>SYSTEM<br />TEST 02</p>
-            <small>EXPERIMENT / 02</small>
+        <article class="game-polaroid card-b" data-project-category="prototype" tabindex="0">
+          <div class="game-art art-combat">
+            <span class="combat-slash slash-one"></span>
+            <span class="combat-slash slash-two"></span>
+            <span class="combat-target"></span>
+            <small>SYSTEM TEST / 02</small>
           </div>
-          <div class="project-copy">
-            <div class="project-topline">
-              <span>02</span>
-              <span class="project-status concept">CONCEPT</span>
-            </div>
-            <h3>Untitled<br />Combat Lab</h3>
-            <p>A modular sandbox for testing movement, combat feedback, progression loops, and character abilities.</p>
-            <ul class="tags" aria-label="Project disciplines">
-              <li>Prototyping</li>
-              <li>Combat Design</li>
-              <li>VFX Direction</li>
-            </ul>
+          <div class="game-caption">
+            <span>02</span><div><h3>Combat Lab</h3><p>Movement / Combat / VFX</p></div>
+          </div>
+        </article>
+
+        <article class="game-polaroid card-c" data-project-category="prototype" tabindex="0">
+          <div class="game-art art-interface">
+            <span class="ui-panel panel-one"></span>
+            <span class="ui-panel panel-two"></span>
+            <span class="ui-cursor">+</span>
+            <small>UI STUDY / 03</small>
+          </div>
+          <div class="game-caption">
+            <span>03</span><div><h3>Interface Study</h3><p>UI / UX / Motion</p></div>
+          </div>
+        </article>
+
+        <article class="game-polaroid card-d" data-project-category="released" tabindex="0">
+          <div class="game-art art-archive">
+            <span class="archive-disc"></span>
+            <span class="archive-line"></span>
+            <strong>ARCHIVE</strong>
+            <small>PAST WORK / 04</small>
+          </div>
+          <div class="game-caption">
+            <span>04</span><div><h3>Past Experiments</h3><p>Archive / Learning / Iteration</p></div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section ugc" id="ugc">
-      <div class="ugc-heading reveal">
-        <p class="section-no">03 / DIGITAL GOODS</p>
-        <h2>UGC <span>collection</span></h2>
-        <p>Wearable concepts and digital items designed to give every avatar a stronger identity.</p>
+    <section class="dev-section showcase reveal" id="showcase">
+      <div class="dev-section-head">
+        <p class="section-code">03 / FEATURED PROCESS</p>
+        <h2>Inside the <span>studio</span></h2>
+        <p>Switch between disciplines to see how each project comes together.</p>
       </div>
 
-      <div class="ugc-grid">
-        <article class="ugc-card reveal">
-          <div class="ugc-art art-a">
-            <span class="item-shape item-halo"></span>
-            <span class="coordinate">X.041 / Y.206</span>
+      <div class="showcase-layout">
+        <article class="featured-build" id="featuredBuild">
+          <div class="featured-screen theme-game" id="featuredScreen">
+            <span class="featured-grid"></span>
+            <span class="featured-symbol" id="featuredSymbol">01</span>
+            <span class="featured-scan"></span>
+            <button type="button" aria-label="Play showcase preview">▶</button>
           </div>
-          <div><span>01</span><h3>Headwear</h3><p>Concept series / coming soon</p></div>
-        </article>
-        <article class="ugc-card offset reveal">
-          <div class="ugc-art art-b">
-            <span class="item-shape item-crown"></span>
-            <span class="coordinate">X.128 / Y.550</span>
+          <div class="featured-meta">
+            <div>
+              <span id="featuredType">GAME DESIGN</span>
+              <h3 id="featuredTitle">Building the core loop</h3>
+              <p id="featuredDescription">From the first player action to rewards, pacing, and reasons to return.</p>
+            </div>
+            <dl>
+              <div><dt>STATUS</dt><dd id="featuredStatus">IN PROGRESS</dd></div>
+              <div><dt>FOCUS</dt><dd id="featuredFocus">PLAYER LOOP</dd></div>
+            </dl>
           </div>
-          <div><span>02</span><h3>Accessories</h3><p>Experimental collection</p></div>
         </article>
-        <article class="ugc-card reveal">
-          <div class="ugc-art art-c">
-            <span class="item-shape item-wing"></span>
-            <span class="coordinate">X.404 / Y.087</span>
-          </div>
-          <div><span>03</span><h3>Limited Ideas</h3><p>Archive / future release</p></div>
-        </article>
-      </div>
-    </section>
 
-    <section class="section capabilities" id="capabilities">
-      <header class="section-header reveal">
-        <div>
-          <p class="section-no">04 / WHAT I DO</p>
-          <h2>From idea<br />to <em>experience.</em></h2>
+        <div class="showcase-queue" role="list">
+          <button class="queue-item active" type="button" data-feature="game" data-symbol="01" data-type="GAME DESIGN" data-title="Building the core loop" data-description="From the first player action to rewards, pacing, and reasons to return." data-status="IN PROGRESS" data-focus="PLAYER LOOP">
+            <span>01</span><div><b>Game Design</b><small>Loops and progression</small></div><i>↗</i>
+          </button>
+          <button class="queue-item" type="button" data-feature="world" data-symbol="02" data-type="WORLD DESIGN" data-title="Shaping readable worlds" data-description="Spaces built around atmosphere, navigation, discovery, and memorable landmarks." data-status="EXPLORING" data-focus="LEVEL FLOW">
+            <span>02</span><div><b>World Design</b><small>Spaces and atmosphere</small></div><i>↗</i>
+          </button>
+          <button class="queue-item" type="button" data-feature="ui" data-symbol="03" data-type="UI / UX" data-title="Making systems feel clear" data-description="Interfaces that translate complex systems into responsive and understandable moments." data-status="ITERATING" data-focus="FEEDBACK">
+            <span>03</span><div><b>UI / UX</b><small>Clarity and motion</small></div><i>↗</i>
+          </button>
+          <button class="queue-item" type="button" data-feature="ugc" data-symbol="04" data-type="UGC DESIGN" data-title="Designing avatar identity" data-description="Wearable concepts shaped around strong silhouettes, themes, and player expression." data-status="CONCEPT" data-focus="SILHOUETTE">
+            <span>04</span><div><b>UGC</b><small>Avatar expression</small></div><i>↗</i>
+          </button>
         </div>
-        <p class="section-intro">A flexible portfolio system built to grow as new disciplines, projects, and collaborations are added.</p>
-      </header>
-
-      <div class="capability-list">
-        <article class="capability reveal">
-          <span>01</span><h3>Game Design</h3><p>Core loops, player journeys, mechanics, and progression.</p><i>↗</i>
-        </article>
-        <article class="capability reveal">
-          <span>02</span><h3>World & Level Design</h3><p>Readable spaces with atmosphere, rhythm, and purpose.</p><i>↗</i>
-        </article>
-        <article class="capability reveal">
-          <span>03</span><h3>UI / Visual Direction</h3><p>Interfaces and art direction that give each project an identity.</p><i>↗</i>
-        </article>
-        <article class="capability reveal">
-          <span>04</span><h3>UGC Concepts</h3><p>Avatar items designed around silhouette and personality.</p><i>↗</i>
-        </article>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="contact-orbit" aria-hidden="true"><span></span><i></i></div>
-      <p class="section-no reveal">05 / NEXT PROJECT</p>
-      <h2 class="reveal">LET'S BUILD<br /><span>SOMETHING</span><br />PLAYABLE.</h2>
-      <a class="contact-link reveal" href="mailto:hello@moji.art">
-        <span>Start a conversation</span><b>↗</b>
-      </a>
-      <div class="contact-foot">
-        <span>MOJI // GAME DEVELOPMENT</span>
-        <span>ROBLOX STUDIO PORTFOLIO / 2026</span>
+    <section class="ugc-marquee reveal" id="ugc">
+      <div class="dev-section-head ugc-head">
+        <div>
+          <p class="section-code">04 / DIGITAL ITEMS</p>
+          <h2>UGC <span>concepts</span></h2>
+        </div>
+        <p>A growing shelf for wearable ideas, accessories, and future limited items.</p>
+      </div>
+
+      <div class="ugc-track-wrap" aria-label="UGC concept categories">
+        <div class="ugc-track">
+          <article class="ugc-tile tile-halo"><span class="ugc-shape halo"></span><b>Headwear</b><small>CONCEPT 01</small></article>
+          <article class="ugc-tile tile-crown"><span class="ugc-shape crown"></span><b>Accessories</b><small>CONCEPT 02</small></article>
+          <article class="ugc-tile tile-wing"><span class="ugc-shape wing"></span><b>Back Items</b><small>CONCEPT 03</small></article>
+          <article class="ugc-tile tile-core"><span class="ugc-shape core"></span><b>Limited Ideas</b><small>CONCEPT 04</small></article>
+          <article class="ugc-tile tile-halo"><span class="ugc-shape halo"></span><b>Headwear</b><small>CONCEPT 01</small></article>
+          <article class="ugc-tile tile-crown"><span class="ugc-shape crown"></span><b>Accessories</b><small>CONCEPT 02</small></article>
+          <article class="ugc-tile tile-wing"><span class="ugc-shape wing"></span><b>Back Items</b><small>CONCEPT 03</small></article>
+          <article class="ugc-tile tile-core"><span class="ugc-shape core"></span><b>Limited Ideas</b><small>CONCEPT 04</small></article>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="script.js?v=4"></script>
+  <section class="dev-finale reveal" id="contact">
+    <div class="finale-copy">
+      <p class="section-code">05 / NEXT PROJECT</p>
+      <h2>Let's build<br /><span>something</span><br />playable.</h2>
+      <a href="mailto:hello@moji.art"><span>Start a conversation</span><b>↗</b></a>
+    </div>
+    <div class="finale-orbit" aria-hidden="true">
+      <span class="finale-ring ring-one"></span>
+      <span class="finale-ring ring-two"></span>
+      <strong>M//DEV</strong>
+    </div>
+    <footer>
+      <span>MOJI // GAME DEVELOPMENT</span>
+      <span>ROBLOX STUDIO PORTFOLIO / 2026</span>
+    </footer>
+  </section>
+
+  <script src="script.js?v=5"></script>
+  <script src="layout-v2.js?v=6"></script>
   <script src="../transition-bridge.js?v=5"></script>
 </body>
 </html>
