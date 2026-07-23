@@ -4,19 +4,27 @@ const devGlitchOverlay = document.getElementById('devGlitchOverlay');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let glitchTimer;
 
+document.querySelectorAll('.section-code').forEach((label) => {
+  label.classList.add('glitch-copy');
+  label.dataset.glitchText = label.textContent.trim();
+});
+
 function triggerDevGlitch(duration = 380) {
   if (reduceMotion.matches || document.hidden || document.body.classList.contains('is-loading')) return;
   window.clearTimeout(glitchTimer);
   devGlitchOverlay?.classList.remove('active');
   void devGlitchOverlay?.offsetWidth;
+  document.body.classList.add('dev-text-glitch');
   devGlitchOverlay?.classList.add('active');
   glitchTimer = window.setTimeout(() => {
+    document.body.classList.remove('dev-text-glitch');
     devGlitchOverlay?.classList.remove('active');
   }, duration);
 }
 
 projectFilters.forEach((button) => {
   button.addEventListener('click', () => {
+    triggerDevGlitch(320);
     projectFilters.forEach((item) => item.classList.remove('active'));
     button.classList.add('active');
 
@@ -46,6 +54,7 @@ queueItems.forEach((item) => {
     featuredScreen.className = `featured-screen theme-${item.dataset.feature}`;
     featuredSymbol.textContent = item.dataset.symbol;
     featuredType.textContent = item.dataset.type;
+    featuredType.dataset.glitchText = item.dataset.type;
     featuredTitle.textContent = item.dataset.title;
     featuredDescription.textContent = item.dataset.description;
     featuredStatus.textContent = item.dataset.status;

@@ -101,6 +101,69 @@
   75% { transform: translateX(8px); }
 }
 
+.glitch-copy {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+.glitch-copy::before,
+.glitch-copy::after {
+  content: attr(data-glitch-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: inherit;
+  white-space: nowrap;
+}
+.glitch-copy::before {
+  left: 2px;
+  text-shadow: -2px 0 #a17cff;
+  animation: text-noise-a 7.4s steps(1, end) infinite alternate-reverse;
+}
+.glitch-copy::after {
+  left: -2px;
+  text-shadow: 2px 0 #67dfff;
+  animation: text-noise-b 9.2s steps(1, end) infinite alternate;
+}
+body.dev-text-glitch .glitch-copy::before {
+  animation: text-burst-a .42s steps(1, end) both;
+}
+body.dev-text-glitch .glitch-copy::after {
+  animation: text-burst-b .42s steps(1, end) both;
+}
+@keyframes text-noise-a {
+  0%, 82%, 100% { opacity: 0; clip-path: inset(0 0 100% 0); }
+  84% { opacity: .85; clip-path: inset(12% 0 68% 0); transform: translateX(-2px); }
+  86% { opacity: .62; clip-path: inset(58% 0 18% 0); transform: translateX(3px); }
+  88% { opacity: .9; clip-path: inset(34% 0 48% 0); transform: translateX(-1px); }
+  90% { opacity: .45; clip-path: inset(76% 0 8% 0); }
+  92% { opacity: 0; clip-path: inset(0 0 100% 0); }
+}
+@keyframes text-noise-b {
+  0%, 72%, 100% { opacity: 0; clip-path: inset(100% 0 0 0); }
+  74% { opacity: .74; clip-path: inset(8% 0 76% 0); transform: translateX(2px); }
+  76% { opacity: .9; clip-path: inset(44% 0 32% 0); transform: translateX(-3px); }
+  78% { opacity: .55; clip-path: inset(70% 0 10% 0); }
+  80% { opacity: .84; clip-path: inset(24% 0 61% 0); transform: translateX(1px); }
+  82% { opacity: 0; clip-path: inset(100% 0 0 0); }
+}
+@keyframes text-burst-a {
+  0%, 100% { opacity: 0; clip-path: inset(0 0 100% 0); }
+  15% { opacity: .9; clip-path: inset(8% 0 69% 0); transform: translateX(-3px); }
+  38% { opacity: .65; clip-path: inset(59% 0 17% 0); transform: translateX(4px); }
+  62% { opacity: .9; clip-path: inset(31% 0 51% 0); transform: translateX(-2px); }
+  82% { opacity: .55; clip-path: inset(78% 0 6% 0); }
+}
+@keyframes text-burst-b {
+  0%, 100% { opacity: 0; clip-path: inset(100% 0 0 0); }
+  20% { opacity: .75; clip-path: inset(67% 0 9% 0); transform: translateX(3px); }
+  43% { opacity: .95; clip-path: inset(18% 0 66% 0); transform: translateX(-4px); }
+  68% { opacity: .65; clip-path: inset(46% 0 28% 0); transform: translateX(2px); }
+}
+
 .dev-navbar {
   position: sticky;
   top: 0;
@@ -814,4 +877,6 @@ main { position: relative; z-index: 1; }
   .stage-orbit,
   .finale-ring { animation: none; }
   .dev-glitch-overlay { display: none !important; }
+  .glitch-copy::before,
+  .glitch-copy::after { display: none; animation: none; }
 }
