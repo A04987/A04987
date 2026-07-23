@@ -5,10 +5,10 @@ This repository also contains a static portfolio website for GitHub Pages.
 ## Structure
 
 - `index.html` - GitHub Pages entry file that redirects to the portfolio
-- `kawaii-portfolio/index.html` - main portfolio page
-- `kawaii-portfolio/styles.css` - portfolio styles
-- `kawaii-portfolio/script.js` - portfolio interactions
-- `kawaii-portfolio/asset/` - portfolio artwork assets
+- `portfolio/index.html` - main portfolio page
+- `portfolio/styles.css` - portfolio styles
+- `portfolio/script.js` - portfolio interactions
+- `portfolio/asset/` - portfolio artwork assets
 - `folder-image/` - profile/gallery media shared with the profile README
 
 ## GitHub Pages
@@ -33,7 +33,7 @@ Setup:
 4. Deploy it as a Web App.
 5. Set access to `Anyone`.
 6. Copy the Web App URL.
-7. Paste it into `kawaii-portfolio/script.js` as `DRIVE_GALLERY_PROXY_URL`.
+7. Paste it into `portfolio/script.js` as `DRIVE_GALLERY_PROXY_URL`.
 
 After that, adding/removing images in these Drive folders updates the modal automatically:
 
